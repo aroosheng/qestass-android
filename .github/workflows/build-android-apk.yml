@@ -29,7 +29,6 @@ jobs:
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
-
             - name: Accept Android SDK licenses
         run: |
           set +o pipefail
