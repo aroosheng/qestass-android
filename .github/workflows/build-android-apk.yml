@@ -1,4 +1,3 @@
-
 name: Build Dadgostar Android APK
 
 'on':
@@ -13,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4 
-                  - name: Extract project source
+        uses: actions/checkout@v4
 
+      - name: Extract project source
         run: unzip -o qestass_android_online_ready_fixed.zip -d .
 
       - name: Set up Node.js
@@ -37,7 +36,7 @@ jobs:
 
       - name: Install Android SDK packages
         run: |
-          sdkmanager --licenses
+          yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Install dependencies
